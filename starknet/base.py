@@ -1,4 +1,4 @@
-import os,sys
+import os,sys,requests,json
 from Crypto.Hash import keccak
 
 def toi(text):
@@ -33,9 +33,10 @@ def sn_functionhash(funcname):
 import threading
 thread_data = threading.local()
 
+def getsess():
+    return requests.session()
+
 def rpccall(endpoint, data, timeout=None):
-    if isinstance(endpoint, Endpoint_Provider):
-        return endpoint.rpccall(data, timeout=timeout)
     if timeout is None:
         timeout = int(os.getenv("TIMEOUT", 10))
     sess = thread_data.__dict__.get("sess")

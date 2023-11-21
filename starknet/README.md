@@ -1,6 +1,6 @@
 ## Starknet in MiniBridge
 
-`base.py` is a wrapper for `starknet_py`, provides these functionalities:
+`base.py` is a simple wrapper for `starknet_py`, provides these functionalities:
 
 - `sn_callfunction`: call a contract function
 - `sn_balanceOf`: get ETH balance
@@ -13,6 +13,10 @@
 - `sn_getLogs_ETHtransfer`: get ETH transfer events
 - `sn_getTransactionANDReceipt`: get a transaction and its receipt
 - `sn_sendRawTransaction`: send a signed tx to RPC
+
+Most of the functions do RPC call itself, without relying on starknet_py to ensure the performance.
+
+Note that braavos account contract overrides the signature process of deploy contract, and `starknet_py` do not support it. We have fixed it by hooking the signature function, see `sn_braavos_deploy_account`.
 
 ## Examples
 

@@ -1,6 +1,10 @@
 import os,sys,requests,json
 from Crypto.Hash import keccak
-
+try:
+    _chainidcache = json.load(open("/tmp/chainid.json"))
+except:
+    _chainidcache = {}
+    
 def toi(text):
     if text is None:
         return None

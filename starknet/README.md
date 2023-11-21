@@ -40,6 +40,8 @@ for bn in it:
 See also the [helper contract](../contracts/starknet_helper)
 
 ```
+LOG_BRIDGETO = sn_functionhash("BridgeTo") #int
+
 def process_tx(tx):
     ...
     thelog = [i for i in tx["events"] if toi(i["keys"][0])==LOG_BRIDGETO and toi(i["from_address"])==int_helper]

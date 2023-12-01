@@ -24,6 +24,18 @@ Note that braavos account contract overrides the signature process of deploy con
 
 [generate_vanity_starknet.py](generate_vanity_starknet.py)
 
+You can export your public key and private key from braavos wallet, then run:
+
+```
+python3 -m pip install mpms
+python3 generate_vanity_starknet.py <your public key>
+```
+
+Found salt and address will be written to `found.log`, after you find an address with satisfactory prefix zero length, you can finish the deploy by:
+
+- Send ETH to the new generated address
+- call sn_braavos_deploy_account(sn_RPC_mainnet, privatekey, salt)
+
 ### bridge received ETH from which txs?
 
 ```

@@ -1,5 +1,11 @@
 // SPDX-License-Identifier: MIT
 // https://minibridge.chaineye.tools
+
+// use https://minibridge-conf.chaineye.tools/conf.json to get helper address
+// usually deployed to 0x000000000000Bd696655814b68C2f67e399ab4e5
+// zksync not supported
+// opbnb 0x257312be423cEB2D43683f44b101dC10dfEe3e22
+
 pragma solidity 0.8.19;
 interface IERC20 {
     function balanceOf(address account) external view returns (uint256);

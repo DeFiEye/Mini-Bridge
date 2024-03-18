@@ -1,4 +1,4 @@
-## MiniBridge Contracts
+## MiniBridge Internal Contracts
 
 Thanks for your interest to our contracts, contrary to what you may expect, these contracts are NOT the core part of the bridging logic.
 

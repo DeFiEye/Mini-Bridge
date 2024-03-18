@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: MIT
 // https://minibridge.chaineye.tools
+
+// this contract is used by bridge EOA to support sending both ETH (ERC20) and native token to user
+
 pragma solidity 0.8.19;
 interface IERC20 {
     function balanceOf(address account) external view returns (uint256);
